@@ -1,11 +1,13 @@
+package entity;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import dao.CurrencyUnitDao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,8 +16,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,14 +27,11 @@ public class Utils {
     private static String sortAndOrdersParams = "&sort=exchangedate&order=desc&json";
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPATest");
     private static EntityManager em = emf.createEntityManager();
-    private static int quantityDaysInPeriod;
+    private static Scanner scanner = new Scanner(System.in);
+    private static CurrencyUnitDao cud;
 
-    public static void getAverageCurrency() {
-        saveStatisticToBd(getCurrencyStatistic());
-        TypedQuery<Double> query = em.createQuery(
-                "SELECT AVG(e.rate) FROM CurrencyUnit e", Double.class);
-        Double averageSalary = query.getSingleResult();
-        String formattedString = String.format("Average currency is : %.2f", averageSalary);
+    public static void printQueryResult(Double result, String outputParam) {
+        String formattedString = String.format(outputParam + " is : %.2f", result);
         System.out.println(formattedString);
     }
 
@@ -53,24 +50,18 @@ public class Utils {
     }
 
     private static void saveStatisticToBd(List<CurrencyUnit> list) {
-        Dao<CurrencyUnit> cud = new CurrencyUnitDao(em);
+        cud = new CurrencyUnitDao(em);
         for (CurrencyUnit currencyUnit : list) {
             cud.create(currencyUnit);
         }
     }
 
     private static URL getUrlWithParams() throws MalformedURLException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the start date of the period (yyyyMMdd)");
-        startDate += scanner.nextLine();
-        System.out.println("Enter the final date of the period (yyyyMMdd)");
-        finishDate += scanner.nextLine();
-        currencyCode += "usd";
         url += (startDate + finishDate + currencyCode + sortAndOrdersParams);
         return new URL(url);
     }
 
-    public static String getStringFromResponse(URL url) throws IOException {
+    private static String getStringFromResponse(URL url) throws IOException {
         String strBuf;
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         InputStream is = http.getInputStream();
@@ -95,5 +86,30 @@ public class Utils {
         } while (r != -1);
 
         return bos.toByteArray();
+    }
+
+    public static void loadStatistic() {
+        setStartDate();
+        setFinishDate();
+        setCurrencyCode();
+        saveStatisticToBd(getCurrencyStatistic());
+    }
+
+    private static void setStartDate() {
+        System.out.println("Enter the start date of the period (yyyyMMdd)");
+        startDate += scanner.nextLine();
+    }
+
+    private static void setFinishDate() {
+        System.out.println("Enter the final date of the period (yyyyMMdd)");
+        finishDate += scanner.nextLine();
+    }
+
+    private static void setCurrencyCode() {
+        System.out.println("Enter currency ticker (usd, eur)");
+        currencyCode += scanner.nextLine();
+    }
+    public static CurrencyUnitDao getCurrencyUnitDao(){
+        return cud;
     }
 }

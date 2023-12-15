@@ -1,3 +1,7 @@
+package dao;
+
+import dao.Dao;
+
 import javax.persistence.EntityManager;
 
 public abstract class AbstractDao<T> implements Dao<T> {

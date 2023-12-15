@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ccb5fd-f7ef-497d-a735-d075ff138ba7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AbstractDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CurrencyUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CurrencyUnitDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+    <list default="true" id="91ccb5fd-f7ef-497d-a735-d075ff138ba7" name="Changes" comment="0812 Lesson7AdditionalHW">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CurrencyUnitDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/CurrencyUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CurrencyUnitDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AbstractDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AbstractDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CurrencyUnit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CurrencyUnitDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Maxim/IdeaProjects/Homeworks/module3JavaPro/Lesson7HWAdditional/src/main/resources/META-INF&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Maxim/IdeaProjects/Homeworks/module3JavaPro/Lesson7HWAdditional/src/main/java/entity&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Maxim/IdeaProjects/Homeworks/module3JavaPro/Lesson7HWAdditional&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -70,6 +68,34 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Maxim\IdeaProjects\Homeworks\module3JavaPro\Lesson7HWAdditional\src\main\resources\META-INF" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="entity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CurrencyUnitDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lesson7HWAdditional" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CurrencyUnitDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CurrencyUnitDaoTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,8 +106,20 @@
       <option name="presentableId" value="Default" />
       <updated>1701945947161</updated>
       <workItem from="1701945948143" duration="8955000" />
-      <workItem from="1701978644863" duration="5666000" />
+      <workItem from="1701978644863" duration="6346000" />
+      <workItem from="1702055685867" duration="5452000" />
+      <workItem from="1702370349902" duration="23735000" />
+      <workItem from="1702646680137" duration="739000" />
     </task>
+    <task id="LOCAL-00001" summary="0812 Lesson7AdditionalHW">
+      <option name="closed" value="true" />
+      <created>1702026532352</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702026532352</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,16 +127,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="0812 Lesson7AdditionalHW" />
+    <option name="LAST_COMMIT_MESSAGE" value="0812 Lesson7AdditionalHW" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Utils.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Lesson7HWAdditional$CurrencyUnitDaoTest.ic" NAME="CurrencyUnitDaoTest Coverage Results" MODIFIED="1702412246090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
   </component>
 </project>
